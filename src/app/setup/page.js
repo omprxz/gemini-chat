@@ -24,7 +24,7 @@ export default function SetupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-2">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-2 text-black">
       <div className="w-full max-w-md bg-white py-6 px-4 rounded-lg shadow-md">
         <h1 className="text-2xl font-semibold mb-4 text-black">Setup Gemini API Key</h1>
         <form onSubmit={handleSubmit}>
