@@ -72,9 +72,9 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-2">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-2 text-black">
       <div className="w-full max-w-2xl bg-white py-6 px-4 rounded-lg shadow-md">
-        <h1 className="text-2xl font-semibold">Gemini Chat</h1>
+        <h1 className="text-2xl font-semibold text-black">Gemini Chat</h1>
         <Link href="/setup" className="text-blue-500 hover:underline">
           Setup API Key
         </Link>

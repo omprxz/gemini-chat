@@ -26,7 +26,7 @@ export default function SetupPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-2">
       <div className="w-full max-w-md bg-white py-6 px-4 rounded-lg shadow-md">
-        <h1 className="text-2xl font-semibold mb-4">Setup Gemini API Key</h1>
+        <h1 className="text-2xl font-semibold mb-4 text-black">Setup Gemini API Key</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">API Key</label>
@@ -42,7 +42,7 @@ export default function SetupPage() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full p-2 rounded-md ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
+            className={`w-full p-2 rounded-md text-white ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
           >
             {loading ? 'Submitting...' : 'Submit'}
           </button>
