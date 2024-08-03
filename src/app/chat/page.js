@@ -44,27 +44,28 @@ export default function ChatPage() {
   };
 
   const renderers = {
-    code({ node, inline, className, children, ...props }) {
+    code({ node, inline, className, ...props }) {
       const match = /language-(\w+)/.exec(className || '');
       return !inline && match ? (
         <div className="relative text-sm">
           <button
             className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-2 rounded"
-            onClick={() => navigator.clipboard.writeText(children)}
+            onClick={() => navigator.clipboard.writeText(String(props.children))}
           >
             Copy
           </button>
           <SyntaxHighlighter
-            children={String(children).replace(/\n$/, '')}
             style={dracula}
             language={match[1]}
             PreTag="div"
             {...props}
-          />
+          >
+            {String(props.children).replace(/\n$/, '')}
+          </SyntaxHighlighter>
         </div>
       ) : (
         <code className={className} {...props}>
-          {children}
+          {props.children}
         </code>
       );
     }
@@ -118,10 +119,11 @@ export default function ChatPage() {
               <div key={index} className={`mb-4 p-2 rounded-md ${entry.role === 'user' ? 'bg-blue-100' : 'bg-green-100'}`}>
                 <ReactMarkdown
                   className='text-base'
-                  children={entry.parts[0].text}
                   remarkPlugins={[remarkGfm]}
                   components={renderers}
-                />
+                >
+                  {entry.parts[0].text}
+                </ReactMarkdown>
               </div>
             ))}
           </div>
