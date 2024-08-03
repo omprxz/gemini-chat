@@ -42,7 +42,7 @@ export default function SetupPage() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full p-2 rounded-md text-white ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
+            className={`w-full p-2 rounded-md ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
           >
             {loading ? 'Submitting...' : 'Submit'}
           </button>

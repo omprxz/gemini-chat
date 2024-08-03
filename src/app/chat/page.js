@@ -49,7 +49,7 @@ export default function ChatPage() {
       return !inline && match ? (
         <div className="relative text-sm">
           <button
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-2 rounded"
+            className="absolute top-2 right-2 bg-blue-500 py-1 px-2 rounded"
             onClick={() => navigator.clipboard.writeText(String(props.children))}
           >
             Copy
@@ -108,7 +108,7 @@ export default function ChatPage() {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className={`w-full p-2 rounded-md text-white ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
+          className={`w-full p-2 rounded-md ${loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'}`}
         >
           {loading ? 'Loading...' : 'Send'}
         </button>
