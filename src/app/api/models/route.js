@@ -14,7 +14,6 @@ export async function GET() {
 
   try {
     const endp = `https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`;
-    console.log(endp)
     const response = await fetch(endp);
     if (!response.ok) {
       throw new Error('Failed to fetch models');
